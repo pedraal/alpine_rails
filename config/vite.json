@@ -3,9 +3,6 @@
     "sourceCodeDir": "app/frontend",
     "watchAdditionalPaths": [
       "app/components"
-    ],
-    "additionalEntrypoints": [
-      "app/components/**/*.js"
     ]
   },
   "development": {

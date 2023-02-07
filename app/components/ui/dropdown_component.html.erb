@@ -1,0 +1,14 @@
+<%= tag.div base_attributes.merge(class: 'relative inline-block') do %>
+  <button class="btn" x-bind="trigger">
+    <%= trigger %>
+  </button>
+  <div class="absolute top-full mt-2 bg-white shadow rounded-lg overflow-hidden z-50" x-bind="menu" x-cloak>
+    <ul>
+      <% items.each do |item| %>
+        <li class="px-4 py-2 hover:bg-gray-100">
+          <%= item %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
