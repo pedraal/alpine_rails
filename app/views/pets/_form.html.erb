@@ -1,0 +1,27 @@
+<%= form_for pet do |form| %>
+  <% if pet.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+      <ul>
+        <% pet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= form.label :animal %>
+    <%= form.collection_select :animal, Pet.animals.entries, :first, :last %>
+  </div>
+  <div class="form-group">
+    <%= form.label :person_id %>
+    <%= form.collection_select :person_id, Person.all, :id, :name %>
+  </div>
+  <div class="form-group">
+    <%= form.submit class: "btn" %>
+  </div>
+<% end %>

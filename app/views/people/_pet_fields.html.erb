@@ -1,0 +1,23 @@
+<div class="border my-2 p-4" x-data="{ destroy: false, hidden: false }" :class="hidden ? 'hidden' : ''">
+  <div x-cloak x-show="destroy" class="flex items-center justify-between">
+    <p><%= form.object.name %> marked for delete</p>
+    <div class="flex gap-2">
+      <button class="btn" @click.prevent="destroy = false"><%= t('actions.cancel') %></button>
+      <button class="btn" @click.prevent="hidden = true"><%= t('actions.hide') %></button>
+    </div>
+  </div>
+  <div x-show="!destroy">
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= form.label :animal %>
+      <%= form.collection_select :animal, Pet.animals.entries, :first, :last %>
+    </div>
+    <div class="text-right form-group">
+      <%= form.check_box '_destroy', 'x-model': 'destroy', class: 'hidden' %>
+      <button class="btn" @click.prevent="destroy = true"><%= "#{t('actions.delete')}" %></button>
+    </div>
+  </div>
+</div>

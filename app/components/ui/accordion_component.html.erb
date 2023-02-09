@@ -1,8 +1,9 @@
-<%= tag.div base_attributes.merge(class: 'relative border-2 rounded-lg') do %>
-  <div x-bind="header">
+<div class="relative border-2 rounded-lg p-4 cursor-pointer" x-data="{open: false}" @click="open = !open">
+  <div class="flex justify-between select-none">
     <%= header %>
+    <span class="transition-all" :class="open ? 'rotate-180' : ''">⬇️</span>
   </div>
-  <div class="mt-2 rounded-lg overflow-hidden" x-bind="body" x-cloak>
+  <div class="mt-2 rounded-lg overflow-hidden" x-show="open" x-collapse x-cloak>
     <%= body %>
   </div>
-<% end %>
+</div>

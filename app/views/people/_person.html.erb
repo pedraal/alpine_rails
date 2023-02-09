@@ -1,0 +1,20 @@
+<div id="<%= dom_id person %>">
+  <p>
+    <strong>Name:</strong>
+    <%= person.name %>
+  </p>
+  <div>
+    <strong>Pets:</strong>
+    <div class="pl-3">
+      <% person.pets.each do |pet| %>
+        <p>
+          <strong>Name:</strong>
+          <%= pet.name %>
+          |
+          <strong>Animal:</strong>
+          <%= pet.animal %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

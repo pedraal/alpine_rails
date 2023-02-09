@@ -14,7 +14,6 @@ export default function ui__dropdown() {
         return this.open
       },
       'x-transition': '',
-      // 'x-collapse': '',
     },
   }
 }

@@ -7,13 +7,19 @@
     <%= csp_meta_tag %>
     <%= render 'shared/vite_headers' %>
   </head>
-  <body class="dark:bg-slate-900 bg-slate-100 dark:text-white p-4 min-h-screen <%= 'debug-screens' if Rails.env.development?%>">
-    <nav class="flex justify-between">
+  <body class="dark:bg-slate-900 bg-slate-100 dark:text-white min-h-screen <%= 'debug-screens' if Rails.env.development?%>">
+    <nav class="flex justify-between bg-slate-200 p-4">
       <div class="flex gap-2">
-        <%= link_to 'Home', root_url, class: '' %>
-        <%= link_to 'Lookbook', lookbook_url, class: '' %>
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'People', people_path %>
+        <%= link_to 'Pets', pets_path %>
       </div>
+      <% if Rails.env.development? %>
+        <%= link_to 'Lookbook', lookbook_path %>
+      <% end %>
     </nav>
-    <%= yield %>
+    <main class="p-4">
+      <%= yield %>
+    </main>
   </body>
 </html>

@@ -31,3 +31,9 @@
 
 en:
   hello: Hello world
+
+  actions:
+    delete: Delete
+    cancel: Cancel
+    add: Add
+    hide: Hide

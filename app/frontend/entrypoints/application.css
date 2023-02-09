@@ -6,8 +6,32 @@
   display: none;
 }
 
+@layer base {
+  a {
+    @apply text-blue-500 underline;
+  }
+
+  label {
+    @apply font-bold mb-1 block;
+  }
+
+  h1 {
+    @apply text-2xl font-bold;
+  }
+
+  h2 {
+    @apply text-xl font-bold;
+  }
+}
+
+@layer components {
+  .form-group {
+    @apply mb-4 last:mb-0;
+  }
+}
+
 @layer components {
   .btn {
-    @apply px-4 py-2 bg-blue-500 text-white rounded-full;
+    @apply px-4 py-2 bg-blue-500 text-white cursor-pointer;
   }
 }

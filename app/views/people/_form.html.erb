@@ -1,0 +1,40 @@
+<%= form_for person do |form| %>
+  <% if person.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+      <ul>
+        <% person.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="form-group" x-data="{
+      add: function() {
+        const template = $refs.template.innerHTML.replace(/TEMPLATE_RECORD/g, new Date().valueOf())
+        document.querySelector('#pets').insertAdjacentHTML('beforeend', template)
+      }
+  }">
+    <div class="flex gap-4">
+      <%= form.label :pets %>
+      <a href="#" @click.prevent="add">+ <%= "#{t('actions.add')}" %></a>
+    </div>
+    <template x-ref="template">
+      <%= form.fields_for :pets, Pet.new(person: person), child_index: 'TEMPLATE_RECORD' do |pet_form| %>
+        <%= render 'pet_fields', form: pet_form %>
+      <% end %>
+    </template>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="pets">
+      <%= form.fields_for :pets do |pet_form| %>
+        <%= render 'pet_fields', form: pet_form %>
+      <% end %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= form.submit class: "btn" %>
+  </div>
+<% end %>

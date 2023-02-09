@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: pets
+#
+#  id         :bigint           not null, primary key
+#  animal     :string
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  person_id  :integer
+#
+
+one:
+  name: Felix
+  animal: cat
+  person: one
+
+two:
+  name: Bethoven
+  animal: dog
+  person: one
