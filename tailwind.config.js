@@ -4,6 +4,8 @@ module.exports = {
   content: [
     './app/**/*.html.erb',
     './app/components/**/*.rb',
+    './test/components/previews/**/*.rb',
+    './test/components/previews/**/*.html.erb',
   ],
   theme: {
     extend: {},

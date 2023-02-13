@@ -1,21 +1,18 @@
 import AsyncAlpine from 'async-alpine'
 import Alpine from 'alpinejs'
 import collapse from '@alpinejs/collapse'
+import tooltip from '../directives/tooltip'
 
 Alpine.plugin(collapse)
 AsyncAlpine.init(Alpine)
 
-// for (const [name, component] of Object.entries(import.meta.glob('../../components/**/*.js')))
-//   AsyncAlpine.data(identifierForGlobKey(name), () => component())
-
-for (const [name, component] of Object.entries(import.meta.glob('../../components/**/*.js'))) {
-  const componentFunction = () => {
-    return component
-  }
-  AsyncAlpine.data(identifierForGlobKey(name), () => componentFunction())
-}
+for (const [name, component] of Object.entries(import.meta.glob('../../components/**/*.js')))
+  AsyncAlpine.data(identifierForGlobKey(name), () => component())
 
 AsyncAlpine.start()
+
+Alpine.directive('tooltip', tooltip)
+
 Alpine.start()
 
 function identifierForGlobKey(key) {

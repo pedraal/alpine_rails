@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@alpinejs/collapse': ^3.11.1
   '@antfu/eslint-config': ^0.34.1
+  '@floating-ui/dom': ^1.2.1
   '@hotwired/turbo': ^7.2.4
   '@tailwindcss/forms': ^0.5.3
   alpinejs: ^3.11.1
@@ -21,6 +22,7 @@ specifiers:
 
 dependencies:
   '@alpinejs/collapse': 3.11.1
+  '@floating-ui/dom': 1.2.1
   alpinejs: 3.11.1
   async-alpine: 1.0.0
 
@@ -384,6 +386,16 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@floating-ui/core/1.2.1:
+    resolution: {integrity: sha512-LSqwPZkK3rYfD7GKoIeExXOyYx6Q1O4iqZWwIehDNuv3Dv425FIAE8PRwtAx1imEolFTHgBEcoFHm9MDnYgPCg==}
+    dev: false
+
+  /@floating-ui/dom/1.2.1:
+    resolution: {integrity: sha512-Rt45SmRiV8eU+xXSB9t0uMYiQ/ZWGE/jumse2o3i5RGlyvcbqOF4q+1qBnzLE2kZ5JGhq0iMkcGXUKbFe7MpTA==}
+    dependencies:
+      '@floating-ui/core': 1.2.1
+    dev: false
 
   /@hotwired/turbo/7.2.4:
     resolution: {integrity: sha512-c3xlOroHp/cCZHDOuLp6uzQYEbvXBUVaal0puXoGJ9M8L/KHwZ3hQozD4dVeSN9msHWLxxtmPT1TlCN7gFhj4w==}

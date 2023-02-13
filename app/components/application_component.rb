@@ -5,9 +5,9 @@ class ApplicationComponent < ViewComponent::Base
 
   def alpine_attributes
     {
-      'x-ignore',
-      'ax-load',
-      'x-data': alpine_identifier
+      'x-ignore': "",
+      'ax-load':  "",
+      'x-data':   alpine_identifier
     }
   end
 

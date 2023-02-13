@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.11.1",
+    "@floating-ui/dom": "^1.2.1",
     "alpinejs": "^3.11.1",
     "async-alpine": "^1.0.0"
   },
