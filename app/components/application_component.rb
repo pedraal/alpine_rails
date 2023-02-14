@@ -1,6 +1,6 @@
 class ApplicationComponent < ViewComponent::Base
   def base_attributes
-    {}.merge(@alpined ? alpine_attributes : {})
+    @alpined ? alpine_attributes : {}
   end
 
   def alpine_attributes
